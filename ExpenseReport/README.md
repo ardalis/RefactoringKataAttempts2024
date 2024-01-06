@@ -39,6 +39,19 @@ The goal is to support the following new feature as best as you can:
 2. Adding Program Main to run the report and view results
 3. Adding 3 initial sample expenses showing all 3 expense types and a dinner over limit
 
+## How would I implement adding Lunch without refactoring
+
+1. Add LUNCH to the enum.
+2. Update meal conditional on line 28
+3. Add case to switch with Lunch expense name
+4. Update ternary on line 47 with lunch limit of 2000
+5. SHIP IT!
+
+## Write a Characterization Test
+
+1. My Program Main is a simple version of such a test. I can pipe the result to a file and diff it if necessary. The timestamp on line 1 may be a problem but one I can easily ignore (by ignoring that line when I compare).
+2. 
+
 ## Credits and License
 
 See: https://github.com/christianhujer/expensereport

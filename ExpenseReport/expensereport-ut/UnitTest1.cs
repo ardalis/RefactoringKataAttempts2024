@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using expensereport_csharp;
 
 namespace Tests
 {
@@ -10,8 +11,14 @@ namespace Tests
         }
 
         [Test]
-        public void Test1()
+        public void CharacterizationTest1()
         {
+            var report = new ExpenseReport();
+
+            var expense = new Expense() { type = ExpenseType.DINNER, amount = 50 };
+
+            report.PrintReport([expense]);
+
             Assert.Pass();
         }
     }

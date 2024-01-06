@@ -16,7 +16,7 @@ public class ExpenseReport_PrintReportToWriter
 		var report = GetExpenseReport();
 		decimal expenseAmount = 5001m;
 
-		var expense = new Expense(ExpenseType2.Dinner, expenseAmount) { type = ExpenseType.DINNER, amount = (int)expenseAmount };
+		var expense = new Expense(ExpenseType2.Dinner, expenseAmount);
 
 		var writer = new StringWriter();
 		report.PrintReportToWriter([expense], writer);

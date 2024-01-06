@@ -6,16 +6,9 @@ using System.IO;
 
 namespace expensereport_csharp;
 
-public enum ExpenseType
-{
-    DINNER, BREAKFAST, CAR_RENTAL
-}
-
 public class Expense(ExpenseType2 expenseType, decimal amount)
 {
-    public ExpenseType type;
     public ExpenseType2 Type { get; set; } = expenseType;
-    public int amount;
     public decimal Amount { get; set; } = amount;
 }
 
@@ -68,7 +61,7 @@ public class ExpenseReport(TimeProvider timeProvider)
                     ? "X"
                     : " ";
 
-            writer.WriteLine(expense.Type.Name + "\t" + expense.amount + "\t" + mealOverExpensesMarker);
+            writer.WriteLine(expense.Type.Name + "\t" + expense.Amount + "\t" + mealOverExpensesMarker);
 
         }
         writer.WriteLine("Meal expenses: " + mealExpenses);
@@ -81,9 +74,9 @@ public class Program
     public static void Main()
     {
         var expenses = new List<Expense>();
-        expenses.Add(new Expense(ExpenseType2.Breakfast, 50) { type = ExpenseType.BREAKFAST, amount = 50 });
-        expenses.Add(new Expense(ExpenseType2.Dinner, 5001) { type = ExpenseType.DINNER, amount = 5001 });
-        expenses.Add(new Expense(ExpenseType2.CarRental, 400) { type = ExpenseType.CAR_RENTAL, amount = 400 });
+        expenses.Add(new Expense(ExpenseType2.Breakfast, 50));
+        expenses.Add(new Expense(ExpenseType2.Dinner, 5001));
+        expenses.Add(new Expense(ExpenseType2.CarRental, 400));
 
         var report = new ExpenseReport(TimeProvider.System);
         report.PrintReport(expenses);

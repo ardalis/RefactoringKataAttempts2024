@@ -86,6 +86,7 @@ String mealOverExpensesMarker = expense.Amount > expense.Type.MaxExpense
 14. Rename ExpenseType2 to ExpenseType
 15. Move everything in main project to its own file per type
 16. Use string interpolation
+17. Add more console tests showing Xes appear when they should
 
 ## Credits and License
 

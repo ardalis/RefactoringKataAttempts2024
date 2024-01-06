@@ -49,8 +49,6 @@ public class ExpenseReport
 {
     public void PrintReport(List<Expense> expenses)
     {
-        //int total = 0;
-        //int mealExpenses = 0;
         decimal mealExpenses2 = expenses.Where(exp => exp.Type.IsMeal).Sum(exp => exp.Amount);
         decimal total2 = expenses.Sum(exp => exp.Amount);
 
@@ -58,11 +56,6 @@ public class ExpenseReport
 
         foreach (Expense expense in expenses)
         {
-            //if (expense.type == ExpenseType.DINNER || expense.type == ExpenseType.BREAKFAST)
-            //{
-            //    mealExpenses += expense.amount;
-            //}
-
             String expenseName = "";
             switch (expense.type)
             {
@@ -78,19 +71,12 @@ public class ExpenseReport
             }
 
             String mealOverExpensesMarker = expense.Amount > expense.Type.MaxExpense
-                //expense.type == ExpenseType.DINNER && expense.amount > 5000 ||
-                //expense.type == ExpenseType.BREAKFAST && expense.amount > 1000
                     ? "X"
                     : " ";
 
             Console.WriteLine(expenseName + "\t" + expense.amount + "\t" + mealOverExpensesMarker);
 
-            total += expense.amount;
         }
-
-        //Console.WriteLine("Meal expenses: " + mealExpenses);
-        //Console.WriteLine("Total expenses: " + total);
-
         Console.WriteLine("Meal expenses2: " + mealExpenses2);
         Console.WriteLine("Total expenses2: " + total2);
     }

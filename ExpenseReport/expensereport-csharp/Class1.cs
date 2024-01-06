@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Ardalis.SmartEnum;
 using System.Linq;
+using System.IO;
 
 namespace expensereport_csharp;
 
@@ -49,12 +50,17 @@ public class ExpenseReport(TimeProvider timeProvider)
 {
 	private readonly TimeProvider _timeProvider = timeProvider;
 
-	public void PrintReport(List<Expense> expenses)
+  public void PrintReport(List<Expense> expenses)
+  {
+    PrintReportToWriter(expenses, Console.Out);
+  }
+
+	public void PrintReportToWriter(List<Expense> expenses, TextWriter writer)
     {
         decimal mealExpenses = expenses.Where(exp => exp.Type.IsMeal).Sum(exp => exp.Amount);
         decimal total = expenses.Sum(exp => exp.Amount);
 
-        Console.WriteLine("Expenses " + _timeProvider.GetLocalNow().DateTime);
+        writer.WriteLine("Expenses " + _timeProvider.GetLocalNow().DateTime);
 
         foreach (Expense expense in expenses)
         {
@@ -62,11 +68,11 @@ public class ExpenseReport(TimeProvider timeProvider)
                     ? "X"
                     : " ";
 
-            Console.WriteLine(expense.Type.Name + "\t" + expense.amount + "\t" + mealOverExpensesMarker);
+            writer.WriteLine(expense.Type.Name + "\t" + expense.amount + "\t" + mealOverExpensesMarker);
 
         }
-        Console.WriteLine("Meal expenses: " + mealExpenses);
-        Console.WriteLine("Total expenses: " + total);
+        writer.WriteLine("Meal expenses: " + mealExpenses);
+        writer.WriteLine("Total expenses: " + total);
     }
 }
 

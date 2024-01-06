@@ -50,7 +50,12 @@ The goal is to support the following new feature as best as you can:
 ## Write a Characterization Test
 
 1. My Program Main is a simple version of such a test. I can pipe the result to a file and diff it if necessary. The timestamp on line 1 may be a problem but one I can easily ignore (by ignoring that line when I compare).
-2. 
+2. Writing a basic characterization test in NUnit. It creates the class and calls PrintReport but doesn't even display the console output. It doesn't blow up, though, so that's something...
+
+Problems with testability:
+
+1. DateTime.Now coupling
+2. Direct Console output
 
 ## Credits and License
 

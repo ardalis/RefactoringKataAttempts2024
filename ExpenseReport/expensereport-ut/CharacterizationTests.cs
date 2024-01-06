@@ -1,13 +1,12 @@
 using NUnit.Framework;
 using expensereport_csharp;
 using System;
-using System.Text;
 using System.IO;
 using Microsoft.Extensions.Time.Testing;
 
 namespace Tests
 {
-	public class Tests
+	public class CharacterizationTests
 	{
 		[SetUp]
 		public void Setup()

@@ -79,6 +79,7 @@ String mealOverExpensesMarker = expense.Amount > expense.Type.MaxExpense
 9. Replace DateTime.Now with TimeProvider
 10. Replace Console usage with TextWriter and extract new method.
 11. Refactor characterization tests for textwriter and timeprovider.
+12. Add unit test class and rename test files
 
 ## Credits and License
 

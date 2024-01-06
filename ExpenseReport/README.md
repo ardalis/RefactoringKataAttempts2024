@@ -81,6 +81,8 @@ String mealOverExpensesMarker = expense.Amount > expense.Type.MaxExpense
 11. Refactor characterization tests for textwriter and timeprovider.
 12. Add unit test class and rename test files
 13. Remove unused fields
+14. Rename ExpenseType2 to ExpenseType
+15. Move everything in main project to its own file per type
 
 ## Credits and License
 

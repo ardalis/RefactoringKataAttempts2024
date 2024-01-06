@@ -21,7 +21,7 @@ namespace Tests
 
 			var report = new ExpenseReport(timeProvider);
 
-			var expense = new Expense(ExpenseType2.Dinner, 50);
+			var expense = new Expense(ExpenseType.Dinner, 50);
 
 			var writer = new StringWriter();
 			report.PrintReportToWriter([expense], writer);

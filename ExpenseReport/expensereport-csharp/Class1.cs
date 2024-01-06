@@ -49,36 +49,22 @@ public class ExpenseReport
 {
     public void PrintReport(List<Expense> expenses)
     {
-        decimal mealExpenses2 = expenses.Where(exp => exp.Type.IsMeal).Sum(exp => exp.Amount);
-        decimal total2 = expenses.Sum(exp => exp.Amount);
+        decimal mealExpenses = expenses.Where(exp => exp.Type.IsMeal).Sum(exp => exp.Amount);
+        decimal total = expenses.Sum(exp => exp.Amount);
 
         Console.WriteLine("Expenses " + DateTime.Now);
 
         foreach (Expense expense in expenses)
         {
-            String expenseName = "";
-            switch (expense.type)
-            {
-                case ExpenseType.DINNER:
-                    expenseName = "Dinner";
-                    break;
-                case ExpenseType.BREAKFAST:
-                    expenseName = "Breakfast";
-                    break;
-                case ExpenseType.CAR_RENTAL:
-                    expenseName = "Car Rental";
-                    break;
-            }
-
             String mealOverExpensesMarker = expense.Amount > expense.Type.MaxExpense
                     ? "X"
                     : " ";
 
-            Console.WriteLine(expenseName + "\t" + expense.amount + "\t" + mealOverExpensesMarker);
+            Console.WriteLine(expense.Type.Name + "\t" + expense.amount + "\t" + mealOverExpensesMarker);
 
         }
-        Console.WriteLine("Meal expenses2: " + mealExpenses2);
-        Console.WriteLine("Total expenses2: " + total2);
+        Console.WriteLine("Meal expenses: " + mealExpenses);
+        Console.WriteLine("Total expenses: " + total);
     }
 }
 

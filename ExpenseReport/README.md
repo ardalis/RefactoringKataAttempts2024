@@ -57,6 +57,25 @@ Problems with testability:
 1. DateTime.Now coupling
 2. Direct Console output
 
+## Refactor the Code
+
+1. Introducing a SmartEnum for ExpenseType that will hold name, isMeal, and maxExpense properties.
+2. Introducing constants for expense limits
+3. Using decimals for monetary values
+4. Update Program Main with modified Expense type and additional required constructor arguments
+5. Run the program - behavior is consistent.
+6. Refactor ternary code to check if over limit:
+
+```csharp
+String mealOverExpensesMarker = expense.Amount > expense.Type.MaxExpense
+    //expense.type == ExpenseType.DINNER && expense.amount > 5000 ||
+    //expense.type == ExpenseType.BREAKFAST && expense.amount > 1000
+    ? "X"
+    : " ";
+```
+
+7. Replace total and mealtotal with new code
+
 ## Credits and License
 
 See: https://github.com/christianhujer/expensereport

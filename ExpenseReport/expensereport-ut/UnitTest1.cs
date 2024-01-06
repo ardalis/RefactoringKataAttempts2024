@@ -15,7 +15,7 @@ namespace Tests
         {
             var report = new ExpenseReport();
 
-            var expense = new Expense() { type = ExpenseType.DINNER, amount = 50 };
+            var expense = new Expense(ExpenseType2.Dinner, 50) { type = ExpenseType.DINNER, amount = 50 };
 
             report.PrintReport([expense]);
 

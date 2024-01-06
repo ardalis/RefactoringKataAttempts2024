@@ -32,6 +32,8 @@ The goal is to support the following new feature as best as you can:
 9. Magic strings
 10. Magic numbers
 11. Tell, Don't Ask when creating mealOverExpensesMarker
+12. String concatenation should use interpolation
+13. Too much vertical distance between declation and use of variables
 
 ## Starting with Tests and a Console Runner
 
@@ -83,6 +85,7 @@ String mealOverExpensesMarker = expense.Amount > expense.Type.MaxExpense
 13. Remove unused fields
 14. Rename ExpenseType2 to ExpenseType
 15. Move everything in main project to its own file per type
+16. Use string interpolation
 
 ## Credits and License
 

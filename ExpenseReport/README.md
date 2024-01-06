@@ -35,8 +35,9 @@ The goal is to support the following new feature as best as you can:
 
 ## Starting with Tests and a Console Runner
 
-1. Updating project to net8
-2. 
+1. Updating projects to net8
+2. Adding Program Main to run the report and view results
+3. Adding 3 initial sample expenses showing all 3 expense types and a dinner over limit
 
 ## Credits and License
 

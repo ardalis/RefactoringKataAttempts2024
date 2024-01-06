@@ -66,6 +66,8 @@ public class Program
     {
         var expenses = new List<Expense>();
         expenses.Add(new Expense { type = ExpenseType.BREAKFAST, amount = 50 });
+        expenses.Add(new Expense { type = ExpenseType.DINNER, amount = 5001 });
+        expenses.Add(new Expense { type = ExpenseType.CAR_RENTAL, amount = 400 });
 
         var report = new ExpenseReport();
         report.PrintReport(expenses);

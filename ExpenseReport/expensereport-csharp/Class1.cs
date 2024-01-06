@@ -45,14 +45,16 @@ public class ExpenseType2 : SmartEnum<ExpenseType2>
     }
 }
 
-public class ExpenseReport
+public class ExpenseReport(TimeProvider timeProvider)
 {
-    public void PrintReport(List<Expense> expenses)
+	private readonly TimeProvider _timeProvider = timeProvider;
+
+	public void PrintReport(List<Expense> expenses)
     {
         decimal mealExpenses = expenses.Where(exp => exp.Type.IsMeal).Sum(exp => exp.Amount);
         decimal total = expenses.Sum(exp => exp.Amount);
 
-        Console.WriteLine("Expenses " + DateTime.Now);
+        Console.WriteLine("Expenses " + _timeProvider.GetLocalNow().DateTime);
 
         foreach (Expense expense in expenses)
         {
@@ -77,7 +79,7 @@ public class Program
         expenses.Add(new Expense(ExpenseType2.Dinner, 5001) { type = ExpenseType.DINNER, amount = 5001 });
         expenses.Add(new Expense(ExpenseType2.CarRental, 400) { type = ExpenseType.CAR_RENTAL, amount = 400 });
 
-        var report = new ExpenseReport();
+        var report = new ExpenseReport(TimeProvider.System);
         report.PrintReport(expenses);
     }
 }

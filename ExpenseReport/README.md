@@ -76,7 +76,7 @@ String mealOverExpensesMarker = expense.Amount > expense.Type.MaxExpense
 
 7. Replace total and mealtotal with new code
 8. Remove commented code and verify everything runs
-9. 
+9. Replace DateTime.Now with TimeProvider
 
 ## Credits and License
 

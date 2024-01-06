@@ -19,6 +19,24 @@ The goal is to support the following new feature as best as you can:
 6. 🔧 Refactor the test.
 7. 👼 Test-drive the new feature.
 
+## Design Code Smells Discovered
+
+1. Poor file naming (Class1.cs)
+2. Poor coding construct grouping (all in 1 cs file)
+3. Primitive obsession: ExpenseType enum
+4. No encapsulation of Expense fields - will create Tell, Don't Ask violations
+5. Static cling: Direct usage of Console.WriteLine for output
+6. Static cling: DateTime.Now in PrintReport
+7. Tell, Don't Ask violation line 28-31 (adding expenses of type meal)
+8. Conditional over polymorphism (switch on expense type)
+9. Magic strings
+10. Magic numbers
+11. Tell, Don't Ask when creating mealOverExpensesMarker
+
+## Starting with Tests and a Console Runner
+
+1. Updating project to net8
+2. 
 
 ## Credits and License
 

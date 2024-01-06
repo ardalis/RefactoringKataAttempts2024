@@ -1,8 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netcoreapp2.2</TargetFramework>
-        <RootNamespace>expensereport_csharp</RootNamespace>
+        <TargetFramework>net8</TargetFramework>
     </PropertyGroup>
 
 </Project>
